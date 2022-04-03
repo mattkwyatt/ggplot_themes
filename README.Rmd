@@ -1,0 +1,45 @@
+---
+title: "Personal ggplot themes"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+The themes work using the ggplot2 theme function.
+
+```{r load_library}
+library(ggplot2)
+```
+
+They are loaded as additional functions to the environment.
+
+```{r import themes}
+source("theme_mkw.R")
+```
+
+## Simple theme
+
+Theme is named `theme_mkw()` after the creator.
+
+```{r mkw_theme}
+iris |> 
+  ggplot(aes(x = Sepal.Length, y = Sepal.Width, col = Species)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_mkw()
+```
+
+### With grid lines
+
+Grid lines can be enabled using the `grid = TRUE` parameter.
+
+```{r mkw_grid}
+iris |> 
+  ggplot(aes(x = Sepal.Length, y = Sepal.Width, col = Species)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_mkw(grid = TRUE)
+```
+
