@@ -1,4 +1,11 @@
-theme_mkw <- function() {
+theme_mkw <- function(grid = FALSE) {
+  
+  if (grid) {
+    gridlines = element_line(colour = "grey85")
+  } else {
+    # modify grid
+    gridlines = element_blank()
+  }
   
   theme(
     # add border
@@ -7,9 +14,13 @@ theme_mkw <- function() {
     # color background
     panel.background = element_rect(fill = "white"),
     
+    # modify grid
+    panel.grid = gridlines,
+    
     # modify text, axis and colour
-    text = element_text(colour = "black", family = "Arial"),
-    axis.title = element_text(colour = "black", family = "Arial"),
+    text = element_text(colour = "black"),
+    axis.title = element_text(colour = "black"),
+    axis.text = element_text(colour = "black"),
     axis.ticks = element_line(colour = "black"),
     
     # legend at the top
@@ -18,6 +29,6 @@ theme_mkw <- function() {
     legend.key = element_rect(fill = "white"),
     
     # modify facet background
-    strip.background = element_rect(colour = "black", fill = "grey85", size = 1)
+    strip.background = element_rect(colour = "black", fill = "grey85")
   )
 }
