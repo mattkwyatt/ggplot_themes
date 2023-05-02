@@ -13,6 +13,12 @@ They are loaded as additional functions to the environment.
 source("theme_mkw.R")
 ```
 
+They can also be loaded directly from github using the line:
+
+```r
+source("https://raw.githubusercontent.com/mattkwyatt/ggplot_themes/master/theme_mkw.R")
+```
+
 ## Simple theme
 
 Theme is named `theme_mkw()` after the creator. All elements are black
